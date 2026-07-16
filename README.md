@@ -16,14 +16,12 @@ name: refine-reqs
 
 ## 安装
 
-将下面示例中的 `<github-user>` 替换为仓库所有者的 GitHub 用户名或组织名。
-
 ### 使用 Codex 安装（推荐）
 
 在 Codex 中输入：
 
 ```text
-$skill-installer 安装 https://github.com/<github-user>/refine-reqs
+$skill-installer 安装 https://github.com/whc1991/refine-reqs-skill
 ```
 
 安装完成后新开一个会话，即可调用 `$refine-reqs`。
@@ -33,7 +31,7 @@ $skill-installer 安装 https://github.com/<github-user>/refine-reqs
 将仓库克隆到个人 Codex Skills 目录：
 
 ```bash
-git clone https://github.com/<github-user>/refine-reqs.git ~/.codex/skills/refine-reqs
+git clone https://github.com/whc1991/refine-reqs-skill.git ~/.codex/skills/refine-reqs
 ```
 
 安装后新开一个 Codex 会话。如果 `~/.codex/skills/refine-reqs` 已存在，请先自行备份或改名；不要直接覆盖已有版本。
