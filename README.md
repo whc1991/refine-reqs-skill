@@ -14,6 +14,42 @@ name: refine-reqs
 - 使用复数 `reqs`，比单独的 `req` 更容易理解为需求集合，降低与 `request`、HTTP 请求对象等概念混淆的可能；
 - 名称较短、容易拼写，适合频繁显式调用。
 
+## 安装
+
+将下面示例中的 `<github-user>` 替换为仓库所有者的 GitHub 用户名或组织名。
+
+### 使用 Codex 安装（推荐）
+
+在 Codex 中输入：
+
+```text
+$skill-installer 安装 https://github.com/<github-user>/refine-reqs
+```
+
+安装完成后新开一个会话，即可调用 `$refine-reqs`。
+
+### 手动安装
+
+将仓库克隆到个人 Codex Skills 目录：
+
+```bash
+git clone https://github.com/<github-user>/refine-reqs.git ~/.codex/skills/refine-reqs
+```
+
+安装后新开一个 Codex 会话。如果 `~/.codex/skills/refine-reqs` 已存在，请先自行备份或改名；不要直接覆盖已有版本。
+
+### 验证目录
+
+安装后的目录至少应包含：
+
+```text
+~/.codex/skills/refine-reqs/
+├── SKILL.md
+├── README.md
+└── agents/
+    └── openai.yaml
+```
+
 ## 最简使用
 
 调用 `$refine-reqs` 已经代表执行完整的需求分析流程。用户只需提供分析对象，不需要重复说明“分析需求”“澄清需求”“拆分 PR”或“不要开发”。
