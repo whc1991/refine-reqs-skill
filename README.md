@@ -16,12 +16,14 @@ name: refine-reqs
 
 ## 安装
 
+将下面示例中的 `<github-user>` 替换为仓库所有者的 GitHub 用户名或组织名。
+
 ### 使用 Codex 安装（推荐）
 
 在 Codex 中输入：
 
 ```text
-$skill-installer 安装 https://github.com/whc1991/refine-reqs-skill
+$skill-installer 安装 https://github.com/<github-user>/refine-reqs
 ```
 
 安装完成后新开一个会话，即可调用 `$refine-reqs`。
@@ -31,7 +33,7 @@ $skill-installer 安装 https://github.com/whc1991/refine-reqs-skill
 将仓库克隆到个人 Codex Skills 目录：
 
 ```bash
-git clone https://github.com/whc1991/refine-reqs-skill.git ~/.codex/skills/refine-reqs
+git clone https://github.com/<github-user>/refine-reqs.git ~/.codex/skills/refine-reqs
 ```
 
 安装后新开一个 Codex 会话。如果 `~/.codex/skills/refine-reqs` 已存在，请先自行备份或改名；不要直接覆盖已有版本。
@@ -113,7 +115,8 @@ $refine-reqs docs/requirements/ 排除 docs/requirements/archive/
 -> 每轮只确认一个关键问题
 -> 输出 SPEC 并等待确认
 -> 拆分功能点 PR 列表
--> 结束
+-> 询问是否将需求点、功能点或两者落地到文件
+-> 用户确认后写入，或直接结束
 ```
 
 每个澄清问题都会提供推荐答案或选项，并说明推荐依据和主要取舍。Skill 会优先从文档和项目上下文中寻找答案，只询问无法可靠推断且需要用户决策的事项。
@@ -129,10 +132,10 @@ $refine-reqs docs/requirements/ 排除 docs/requirements/archive/
 
 ## 输出
 
-需求收敛后，Skill 会先输出带需求编号和来源追踪的 SPEC。只有用户明确确认 SPEC 后，才会继续输出可独立评审、验收和排序的功能点 PR 列表。
+需求收敛后，Skill 会先输出带需求编号和来源追踪的 SPEC。只有用户明确确认 SPEC 后，才会继续输出可独立评审、验收和排序的功能点 PR 列表。分析完成后，Skill 会主要询问是否需要将需求点、功能点或两者落地到项目文件；只有用户明确同意后才会写入。
 
 这里的 PR 表示拟定的功能交付单元，不是真实创建的 Pull Request。
 
 ## 边界
 
-本 Skill 不设计技术方案，不输出代码、SQL 或架构图，不修改项目文件，也不进入开发实施。编程语言和框架不会被预设，只作为已有或待确认的技术约束。
+本 Skill 不设计技术方案，不输出代码、SQL 或架构图，也不进入开发实施。除用户明确同意落地的需求分析产物外，不修改项目文件。编程语言和框架不会被预设，只作为已有或待确认的技术约束。
