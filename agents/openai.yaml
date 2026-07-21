@@ -1,4 +1,4 @@
 interface:
   display_name: "refine-reqs"
-  short_description: "审阅需求材料，持续澄清并输出 SPEC 和功能点 PR 清单"
-  default_prompt: "$refine-reqs docs/requirements/"
+  short_description: "持续澄清并冻结需求，输出可追溯的 SPEC 与功能点"
+  default_prompt: "$refine-reqs docs/requirements/，逐项澄清并冻结需求基线。"
